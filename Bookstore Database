@@ -1,0 +1,37 @@
+CREATE TABLE booklist (id INTEGER PRIMARY KEY, name TEXT, rating INTEGER, genre TEXT, aisle INTEGER, price INTEGER); 
+
+INSERT INTO booklist VALUES (1, "Court of Thorns", 5, "Fantasy", 1, 14.99);
+INSERT INTO booklist VALUES (2, "Ender's Game", 5, "Sci-Fi", 3, 4.99);
+INSERT INTO booklist VALUES (3, "Resident Evil", 4, "Horror", 10, 2.99);
+INSERT INTO booklist VALUES (4, "Tarot", 5, "Fantasy", 9, 4.99);
+INSERT INTO booklist VALUES (5, "US Government Today", 1, "Trash", 14, .99); 
+INSERT INTO booklist VALUES (6, "How to Run A Business", 3, "Economics", 5, 4.99);
+INSERT INTO booklist VALUES (7, "Guilty Pleasures", 4, "Fantasy", 1, 5.75);
+INSERT INTO booklist VALUES (8, "Court of Blades", 3, "Fantasy", 1, 6.79);
+INSERT INTO booklist VALUES (9, "Jacob", 5, "Fantasy", 1, 24.99);
+INSERT INTO booklist VALUES (10, "Noah", 4, "Fantasy", 1, 14.99);
+INSERT INTO booklist VALUES (11, "Gideon", 5, "Fantasy", 1, 14.99);
+INSERT INTO booklist VALUES (12, "Elijah", 3, "Fantasy", 17, 6.99);
+INSERT INTO booklist VALUES (13, "Nemesis", 5, "Fantasy", 16, 7.99);
+INSERT INTO booklist VALUES (14, "Firefly", 5, "Fantasy", 15, 2.99);
+INSERT INTO booklist VALUES (15, "Dr. Who", 5, "Fantasy", 14, 1.99);
+INSERT INTO booklist VALUES (16, "Diablo", 5, "Fantasy", 11, 3.99);
+INSERT INTO booklist VALUES (17, "Warcraft", 5, "Fantasy", 7, 5.99);
+INSERT INTO booklist VALUES (18, "Court of Illusions", 5, "Fantasy", 8, 6.99);
+INSERT INTO booklist VALUES (19, "Alchemist", 4, "Fantasy", 4, 14.92);
+INSERT INTO booklist VALUES (20, "Vampire Academy", 4, "Fantasy", 2, 14.91);
+
+--display the database ordered by price.
+SELECT * FROM booklist
+ORDER BY price asc;
+
+--what is the average price.
+SELECT AVG(price) "avg price of all books"
+FROM booklist;
+
+--what is the averge rating.
+SELECT AVG(rating) "avg rating of all books"
+FROM booklist;
+
+--what is the total price to buy each book.
+SELECT SUM(price) FROM booklist;
