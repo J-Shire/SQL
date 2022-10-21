@@ -1,0 +1,41 @@
+/* Create table about the people and what they do here */
+CREATE TABLE Athletes (id INTEGER PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
+    team TEXT,
+    position integer);
+    
+INSERT INTO Athletes (first_name, last_name, team, position)
+    VALUES ("Aaron", "Rodgers", "Packers", 1);
+INSERT INTO Athletes (first_name, last_name, team, position)
+    VALUES ("Josh", "Allen", "Bills", 1);
+INSERT INTO Athletes (first_name, last_name, team, position)
+    VALUES ("Aaron", "Donald", "Rams", 2);
+INSERT INTO Athletes (first_name, last_name, team, position)
+    VALUES ("Corey", "Linsley", "Chargers", 5);
+INSERT INTO Athletes (first_name, last_name, team, position)
+    VALUES ("Davante", "Adams", "Raiders", 4);
+INSERT INTO Athletes (first_name, last_name, team, position)
+    VALUES ("Derrick", "Henry", "Titans", 3);
+INSERT INTO Athletes (first_name, last_name, team, position)
+    VALUES ("Nick", "Chubb", "Browns", 3);
+INSERT INTO Athletes (first_name, last_name, team, position)
+    VALUES ("Justin", "Jefferson", "Vikings", 4);
+INSERT INTO Athletes (first_name, last_name, team, position)
+    VALUES ("Kenny", "Clark", "Packers", 2);
+INSERT INTO Athletes (first_name, last_name, team, position)
+    VALUES ("Jason", "Kelce", "Eagles", 5);
+
+CREATE TABLE Position (id INTEGER PRIMARY KEY, title TEXT);
+
+INSERT INTO Position VALUES (1, "Quarter Back");
+INSERT INTO Position VALUES (2, "Defensive Tackle");
+INSERT INTO Position VALUES (3, "Running Back");
+INSERT INTO Position VALUES (4, "Wide Reciever");
+INSERT INTO Position VALUES (5, "Center");
+
+SELECT first_name, last_name, title, team FROM Athletes
+Join Position
+ON Athletes.Position = Position.id
+ORDER BY title;
+
