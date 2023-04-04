@@ -52,3 +52,34 @@ ON FEB.orderid=cust.order_id
 WHERE Feb.Quantity>2
 AND length(orderid) = 6
 AND orderid <> 'Order ID'
+
+#8. Order dates
+select orderdate
+from bit_db.febsales
+where orderdate between '02/13/19 00:00' and '02/18/19 00:00'
+
+#9. Location of a specific order
+select location
+from bit_db.febsales
+where orderdate = '02/18/19 01:35'
+
+#10. Total products on a date
+select sum(quantity)
+from bit_db.febsales
+where orderdate like '02/18/19%'
+
+#11. Specific Product
+select distinct product
+from bit_db.febsales
+where product like '%batteries%'
+
+#12. Any product over a specific price
+select distinct product, price
+from bit_db.febsales
+where price like '%.99'
+
+#13. All products from a specific location
+select product, SUM(quantity)
+from bit_db.febsales
+where location like '%los angeles%'
+group by product
